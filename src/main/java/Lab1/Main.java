@@ -3,16 +3,16 @@ package Lab1;
 public class Main {
     public static void main(String[] args) {
         MatrixOperations MatrixOperations = new MatrixOperations();
-        int[][] A = {
-                {1, 2, 3},
-                {4, 5, 6},
-                {7, 8, 9}
+        float[][] A = {
+                {1.2F, 2.1F , 3.1F},
+                {4.3F, 5.4F, 6.1F},
+                {7.2F, 8.3F, 9.1F}
         };
 
-        int[][] B = {
-                {9, 8, 7},
-                {6, 5, 4},
-                {3, 2, 1}
+        float[][] B = {
+                {9.1F, 8.3F, 7.2F},
+                {6.1F, 5.4F, 4.3F},
+                {3.1F, 2.1F, 1.2F}
         };
         MatrixOperations.Matrix(A, B);
     }

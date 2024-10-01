@@ -8,35 +8,37 @@ public class MatrixOperations {
 
     public MatrixOperations() {}
 
-    public void Matrix(int [][] A, int [][] B){
+    public void Matrix(float [][] A, float [][] B){
         try{
             this.showMatrix(B, "Initial matrix");
-            int[][] C = bitwiseXor(A, B);
+            float[][] C = bitwiseXor(A, B);
             this.showMatrix(C, "Matrix after Xor");
         }catch (Exception e){
             System.out.println("Error:" + e.getMessage());
         }
 
         }
-    public void showMatrix(int [][] matrix, String text){
+    public void showMatrix(float [][] matrix, String text){
         System.out.println(text);
-        for (int [] row : matrix) {
-            for (int column : row) {
+        for (float [] row : matrix) {
+            for (float column : row) {
                 System.out.print(column + "\t");
             }
             System.out.println();
         }
     }
-    public static int[][] bitwiseXor(int[][] A, int [][] B){
+    public static float[][] bitwiseXor(float[][] A, float [][] B){
         int rows = A.length;
         int cols = A[0].length;
         if (B.length != rows || B[0].length != cols) {
             throw new IllegalArgumentException("Matrices must have the same size");
         }
-        int[][] C = new int[rows][cols];
+        float[][] C = new float[rows][cols];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                C[i][j] = A[i][j] ^ B[i][j];
+                C[i][j] = Float.intBitsToFloat(
+                        Float.floatToIntBits(A[i][j]) ^ Float.floatToIntBits(B[i][j])
+                );
             }
         }
         return C;
