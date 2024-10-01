@@ -12,7 +12,9 @@ public class MatrixOperations {
         try{
             this.showMatrix(B, "Initial matrix");
             float[][] C = bitwiseXor(A, B);
-            this.showMatrix(C, "Matrix after Xor");
+            this.showMatrix(C, "\nMatrix after Xor");
+            float avarage = avarageValue(C);
+            System.out.println("\nAvarage of matrix C: " + avarage);
         }catch (Exception e){
             System.out.println("Error:" + e.getMessage());
         }
@@ -42,6 +44,17 @@ public class MatrixOperations {
             }
         }
         return C;
+    }
+    public float avarageValue(float [][] matrix){
+        float sum = 0F;
+        int elementsCount = 0;
+        for (float [] row : matrix) {
+            for (float column : row) {
+                sum += column;
+                elementsCount++;
+            }
+        }
+        return sum / elementsCount;
     }
 }
 

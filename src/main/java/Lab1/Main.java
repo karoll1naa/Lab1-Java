@@ -4,15 +4,15 @@ public class Main {
     public static void main(String[] args) {
         MatrixOperations MatrixOperations = new MatrixOperations();
         float[][] A = {
-                {1.2F, 2.1F , 3.1F},
-                {4.3F, 5.4F, 6.1F},
-                {7.2F, 8.3F, 9.1F}
+                {1.0F, 2.0F, 3.0F},
+                {4.0F, 5.0F, 6.0F},
+                {7.0F, 8.0F, 9.0F}
         };
 
         float[][] B = {
-                {9.1F, 8.3F, 7.2F},
-                {6.1F, 5.4F, 4.3F},
-                {3.1F, 2.1F, 1.2F}
+                {9.0F, 8.0F, 7.0F},
+                {6.0F, 5.0F, 4.0F},
+                {3.0F, 2.0F, 1.0F}
         };
         MatrixOperations.Matrix(A, B);
     }
